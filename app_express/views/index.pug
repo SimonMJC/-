@@ -1,0 +1,42 @@
+html
+    head
+        title= title
+        style.
+            h1 {
+                color:red;
+            }
+    body
+        h1= header
+        #login-button this is div id login-button
+        .post-image this is div tag class post-image
+        span#highlight this is highlight span tag
+        span#light this is span light tag
+        p.hidden hidden p tag
+        h1= header
+        p Welcome to #{header}
+        button(type="submit") 전송
+        - const node = 'Node.js'
+        - const js = 'Javascript'
+        p #{node} 와 #{js}
+
+        if isLoggedIn 
+            div 로그인 됨
+        else
+            div 로그인 필요
+
+        - const fruit = 'apple'
+        case fruit 
+            when 'banana'
+                p 바나나
+            default
+                p 과일
+
+        ol 
+            for fr,i in [1,2,3]
+                li= fr + i
+        //- ul
+        //-     for fr in ['a', 'b', 'c', 'd', 'e']
+        //-         li= fr
+        //- script.
+        //-     const message='pug';
+        //-     alert(message);

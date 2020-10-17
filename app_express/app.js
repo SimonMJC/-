@@ -1,24 +1,33 @@
 const express = require('express');
 const path = require('path');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 const app = express();
 
 app.set('port', process.env.port || 3000);
+app.set('views', './views');
+app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'));
-    // res.send('main page')
-
+app.get('/', (req,res)=>{
+    res.render('index',{title:'Express - template render', header:'view engine - pug'});
 })
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/index.html'));
+//     // res.send('main page')
+
+// })
 app.get('/about', (req, res) => {
     // res.send('this is about');
-    res.sendFile(path.join(__dirname, '/about.html'));
+    res.sendFile(__dirname + '/about.html');
 
 })
 app.get('/user', (req, res) => {
     // res.send('this is user');
     res.sendFile(path.join(__dirname, '/user.html'));
 
+})
+app.get('/main', (req, res)=>{
+    res.render('main');
 })
 
 app.get('/user/:id/:pwd', (req, res) => {
