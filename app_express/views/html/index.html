@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if title %}
+        {{title}}
+        {% else %}
+        title 변수가 없음
+        {% endif %}
+    </title>
+</head>
+
+<body>
+    <h1>Main Page</h1>
+    <p>
+        {% if title %}
+        {{title}}
+        {% else %}
+        title 변수가 없음
+        {% endif %}
+    </p>
+    {% set node = 'Node.js' %}
+    {% set js =  'Javascript' %}
+    <p>{{node}}와 {{js}}</p>
+    <ul>
+        {% set list1 = ['a', 'b', 'c'] %}
+        {% for element in list1 %}
+        <li>{{loop.index}} 번째 {{element}}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

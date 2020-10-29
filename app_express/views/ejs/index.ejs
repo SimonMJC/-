@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./header') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 
+        <% if (title) { %>
+        <%= title %>
+        <% } else { %>
+            title이 업슴
+            <% } %>
+    </title>
+</head>
+<body>
+    <h1>Main Page</h1>
+    <p>
+        <% if (title) { %>
+        <%= title %>
+        <% } else { %>
+                title이 업슴
+        <% } %>
+    </p>
+    <ul>
+        <% const arr=['a', 'b', 'c'] %>
+        <% for(var i=0; i<arr.length; i++) { %>
+            <li> <%= i %>번째 <%= arr[i] %> </li>
+            <% } %>
+        </ul>
+        <%- include('./footer') %>
+</body>
+</html>
